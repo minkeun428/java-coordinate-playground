@@ -4,16 +4,15 @@ import coordinate.exception.RangeException;
 
 public class PointSetting {
 
-    private int x;
-    private int y;
     private final static int MAX_SIZE = 24;
     private final static int MIN_SIZE = 0;
 
     public PointSetting(String input) {
+
         makeNumbers(input);
     }
 
-    private void makeNumbers(String input) {
+    public Point makeNumbers(String input) {
         String newInput = input.replace("(", "").replace(")", "");
         String[] number = newInput.split(",");
 
@@ -21,8 +20,7 @@ public class PointSetting {
         int paramY = Integer.parseInt(number[1]);
         validate(paramX, paramY);
 
-        this.x = paramX;
-        this.y = paramY;
+        return new Point(paramX, paramY);
     }
 
     private void validate(int x, int y) {
@@ -34,11 +32,4 @@ public class PointSetting {
         }
     }
 
-    public int getX() {
-        return this.x;
-    }
-
-    public int getY() {
-        return this.y;
-    }
 }

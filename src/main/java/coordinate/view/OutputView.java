@@ -1,6 +1,9 @@
 package coordinate.view;
 
+import coordinate.model.PointSetting;
+
 import java.io.PrintStream;
+import java.util.List;
 
 public class OutputView {
     private final PrintStream out = new PrintStream(System.out);
@@ -8,18 +11,21 @@ public class OutputView {
     private static final String ORIGIN = "┼";
     private static final String X_AXIS = "─";
     private static final String Y_AXIS = "│";
-    private static final String TAB = "\t";
     private static final String LINE_BREAK = "\n";
     private static final String BLANK = " ";
     private static final String POINT = "●";
 
-    public void showCoordinate() {
+    public void showCoordinate(List<PointSetting> points) {
         StringBuilder output = new StringBuilder();
         for (int i = COORDINATE_SIZE; i >= 0; i--) {
             output.append(drawYAxis(i));
             output.append(LINE_BREAK);
         }
         out.println(output);
+    }
+
+    public void putPoints(List<PointSetting> pointSettingList) {
+
     }
 
     private String drawYAxis(int number) {
