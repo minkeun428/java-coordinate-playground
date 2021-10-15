@@ -13,7 +13,6 @@ public class InputViewTest {
     void createInputView() {
 
         InputView inputView = new InputView();
-        inputView.start();
 
         //assertThat(inputView.getInputString()).isEqualTo("(10,10)");
         
