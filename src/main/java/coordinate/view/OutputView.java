@@ -12,17 +12,20 @@ public class OutputView {
     private static final String MARK_OF_POINT = ".";
 
     public static void showCoordinate(Figure figure) {
+        //y좌표 그리기 및 점 찍기
         showVertical(figure);
+        //x좌표 그리기
         showHorizontalAxis();
+        //x좌표 숫자 넣기
         showHorizontalNumbers();
     }
 
     private static void showVertical(Figure figure) {
         //y좌표 24부터 시작
         for (int y = Point.MAX_LIMIT; y >= Point.MIN_LIMIT; y--) {
-            showAxisNumber(y);  //y좌표 숫자 넣기
+            showAxisNumber(y);  //y좌표 숫자 넣기 (24~1)
             System.out.println(VERTICAL_AXIS);  //y좌표 선 그리기
-            showPoints(figure, y);  //점 찍기
+            showPoints(figure, y);  //객체 넘기면서 점 찍기
             System.out.println();
         }
     }
@@ -30,6 +33,7 @@ public class OutputView {
     //x or y 숫자 넣기
     private static void showAxisNumber(int index) {
         if (index % 2 == 0) {
+            //네 칸, 기본적으로 오른쪽 맞춤
             System.out.print(String.format("%4d", index));
             return;
         }
@@ -38,9 +42,11 @@ public class OutputView {
 
     //점 찍기
     private static void showPoints(Figure figure, int y) {
-        //x좌표 1부터 시작
+        //x:1~24
         for (int x = Point.MIN_LIMIT; x <= Point.MAX_LIMIT; x++) {
-            if (figure.hasPoint(x, y)) {    //그리는 x or y가 같다면
+            //그리는 x or y가 같다면
+            if (figure.hasPoint(x, y)) {
+                //전체 길이가 4가 될 때까지 문자열을 공백으로 왼쪽 정렬하여 인쇄
                 System.out.print(String.format("%4s", MARK_OF_POINT));
                 continue;
             }
@@ -64,7 +70,6 @@ public class OutputView {
         }
         System.out.println();
     }
-
 
     public static void showArea(Figure figure) {
         System.out.println(figure.getAreaInfo());

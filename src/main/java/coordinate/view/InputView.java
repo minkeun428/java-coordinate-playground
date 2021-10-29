@@ -20,7 +20,9 @@ public class InputView {
     }
 
     public static Figure inputCoordinate(String input) {
+        //before -> "(10,12)-(14,16)"
         input = input.replace("(", "").replace(")", "");
+        //after -> "10,12-14,16"
 
         List<Point> points = createPoints(input);
         return FigureFactory.getInstance(points);
@@ -28,12 +30,14 @@ public class InputView {
 
     private static List<Point> createPoints(String input) {
         String[] stringPoints = input.split(POINT_DELIMITER);
+        //after -> index0 : 10,12 / index1 : 14,16
 
         List<Point> points = new ArrayList();
         for (String inputPoints : stringPoints) {
-            System.out.println("inputPoints::" + inputPoints);
             points.add(createPoint(inputPoints));
         }
+        //points.add(new Point(10,12));
+        //points.add(new Point(14,16));
         return points;
     }
 
