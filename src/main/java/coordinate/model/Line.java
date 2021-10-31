@@ -3,9 +3,7 @@ package coordinate.model;
 import java.util.List;
 
 public class Line extends AbstractFigure{
-    private static final String OUTPUT_AREA_OF_LINE = "두 점 사이의 거리는 ";
     public static final int LINE_POINT_SIZE = 2;
-
 
     public Line(List<Point> points) {
 
@@ -13,9 +11,9 @@ public class Line extends AbstractFigure{
     }
 
     @Override
-    public String getAreaInfo() {
+    public Double getAreaInfo() {
 
-        return OUTPUT_AREA_OF_LINE + area();
+        return area();
     }
 
     @Override

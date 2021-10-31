@@ -2,7 +2,10 @@ package coordinate.view;
 
 
 import coordinate.model.Figure;
+import coordinate.model.Line;
 import coordinate.model.Point;
+import coordinate.model.Rectangle;
+import coordinate.model.Triangle;
 
 public class OutputView {
     private static final String FOUR_BLANK = "    ";
@@ -10,6 +13,9 @@ public class OutputView {
     private static final String ORIGIN = "+";
     private static final String HORIZONTAL_AXIS = "----";
     private static final String MARK_OF_POINT = ".";
+    private static final String OUTPUT_AREA_OF_LINE = "두 점 사이의 거리는 ";
+    private static final String OUTPUT_AREA_OF_RECTANGLE = "사각형의 넓이는";
+    private static final String OUTPUT_AREA_OF_TRIANGLE = "삼각형의 넓이는 ";
 
     public static void showCoordinate(Figure figure) {
         //y좌표 그리기 및 점 찍기
@@ -72,6 +78,15 @@ public class OutputView {
     }
 
     public static void showAreaInfo(Figure figure) {
+        if (figure.getPointSize() == Line.LINE_POINT_SIZE) {
+            System.out.print(OUTPUT_AREA_OF_LINE);
+        }
+        if (figure.getPointSize() == Rectangle.RECTANGLE_POINT_SIZE) {
+            System.out.print(OUTPUT_AREA_OF_RECTANGLE);
+        }
+        if (figure.getPointSize() == Triangle.TRIANGLE_POINT_SIZE) {
+            System.out.print(OUTPUT_AREA_OF_TRIANGLE);
+        }
 
         System.out.println(figure.getAreaInfo());
     }

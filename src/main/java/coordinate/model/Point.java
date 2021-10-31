@@ -4,6 +4,8 @@ package coordinate.model;
 public class Point {
     private final int x;
     private final int y;
+    private final int POW_VAL = 2;
+    private final String WRONG_RANGE_INPUT_VALUE = "잘못된 범위의 입력 값입니다.";
     public static final int MIN_LIMIT = 1;
     public static final int MAX_LIMIT = 24;
 
@@ -15,7 +17,7 @@ public class Point {
 
     private void validation(int x, int y) {
         if (checkRange(x) || checkRange(y)) {
-            throw new IllegalArgumentException("잘못된 범위의 입력 값입니다.");
+            throw new IllegalArgumentException(WRONG_RANGE_INPUT_VALUE);
         }
     }
 
@@ -46,6 +48,6 @@ public class Point {
 
     private double calculatorPow(int firstValue, int secondValue) {
 
-        return Math.pow(firstValue - secondValue, 2);
+        return Math.pow(firstValue - secondValue, POW_VAL);
     }
 }

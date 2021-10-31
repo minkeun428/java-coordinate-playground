@@ -3,7 +3,6 @@ package coordinate.model;
 import java.util.List;
 
 public class Triangle extends AbstractFigure {
-    private static final String OUTPUT_AREA_OF_LINE = "삼각형의 넓이는 ";
     public static final int TRIANGLE_POINT_SIZE = 3;
 
     public Triangle(List<Point> points) {
@@ -11,8 +10,8 @@ public class Triangle extends AbstractFigure {
     }
 
     @Override
-    public String getAreaInfo() {
-        return OUTPUT_AREA_OF_LINE + area();
+    public Double getAreaInfo() {
+        return area();
     }
 
     @Override
