@@ -20,4 +20,9 @@ public class Rectangle extends AbstractFigure {
         return getPoints().get(0).calculateDistance(getPoints().get(1))
                 * getPoints().get(1).calculateDistance(getPoints().get(2));
     }
+
+    @Override
+    public int getPointSize() {
+        return RECTANGLE_POINT_SIZE;
+    }
 }

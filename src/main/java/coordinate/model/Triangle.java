@@ -29,4 +29,9 @@ public class Triangle extends AbstractFigure {
                 / 2;
     }
 
+    @Override
+    public int getPointSize() {
+        return TRIANGLE_POINT_SIZE;
+    }
+
 }

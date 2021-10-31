@@ -18,7 +18,13 @@ public class Line extends AbstractFigure{
 
     @Override
     public double area() {
+
         return getPoints().get(0).calculateDistance(getPoints().get(1));
+    }
+
+    @Override
+    public int getPointSize() {
+        return LINE_POINT_SIZE;
     }
 
 }

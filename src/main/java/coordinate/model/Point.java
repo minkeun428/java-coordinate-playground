@@ -40,6 +40,7 @@ public class Point {
     }
 
     private double calculatorPow(int firstValue, int secondValue) {
+
         return Math.pow(firstValue - secondValue, 2);
     }
 }

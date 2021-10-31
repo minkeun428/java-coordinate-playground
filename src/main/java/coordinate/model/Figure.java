@@ -11,4 +11,6 @@ public interface Figure {
     String getAreaInfo();
 
     double area();
+
+    int getPointSize();
 }
