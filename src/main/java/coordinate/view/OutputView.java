@@ -71,7 +71,8 @@ public class OutputView {
         System.out.println();
     }
 
-    public static void showArea(Figure figure) {
+    public static void showAreaInfo(Figure figure) {
+
         System.out.println(figure.getAreaInfo());
     }
 }

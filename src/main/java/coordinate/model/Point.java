@@ -20,22 +20,27 @@ public class Point {
     }
 
     private boolean checkRange(int coordinate) {
+
         return coordinate < MIN_LIMIT || coordinate > MAX_LIMIT;
     }
 
     public int getX() {
+
         return this.x;
     }
 
     public int getY() {
+
         return this.y;
     }
 
     public boolean isSame(int x, int y) {
+
         return this.x == x && this.y == y;
     }
 
     public double calculateDistance(Point point) {
+
         return Math.sqrt(calculatorPow(this.x, point.x) + calculatorPow(this.y, point.y));
     }
 

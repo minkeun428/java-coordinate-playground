@@ -8,11 +8,13 @@ public class Line extends AbstractFigure{
 
 
     public Line(List<Point> points) {
+
         super(points);
     }
 
     @Override
     public String getAreaInfo() {
+
         return OUTPUT_AREA_OF_LINE + area();
     }
 
@@ -24,6 +26,7 @@ public class Line extends AbstractFigure{
 
     @Override
     public int getPointSize() {
+
         return LINE_POINT_SIZE;
     }
 
