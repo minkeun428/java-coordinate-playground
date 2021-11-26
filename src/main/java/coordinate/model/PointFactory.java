@@ -4,22 +4,24 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PointFactory {
-    private static final String POINT_DELIMITER = "-";
-    private static final String DELIMITER = ",";
+import static coordinate.constants.PointFactoryInfo.DELIMITER;
+import static coordinate.constants.PointFactoryInfo.POINT_DELIMITER;
 
-    public static Figure createInstance(String input) {
+
+public class PointFactory {
+
+    public Figure createInstance(String input) {
         List<Point> points = createPoints(removeBracket(input));
 
         return FigureFactory.getInstance(points);
     }
 
-    public static String removeBracket(String input) {
+    public String removeBracket(String input) {
 
         return input.replaceAll("\\(|\\)", "");
     }
 
-    public static List<Point> createPoints(String input) {
+    public List<Point> createPoints(String input) {
         String[] stringPoints = input.split(POINT_DELIMITER);
 
         List<Point> points = Arrays.stream(stringPoints)

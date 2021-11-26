@@ -2,8 +2,8 @@ package coordinate.model;
 
 import java.util.List;
 
-
 import static coordinate.constants.RectangleInfo.RECTANGLE_POINT_SIZE;
+
 
 public class Rectangle extends AbstractFigure {
 

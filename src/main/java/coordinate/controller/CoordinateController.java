@@ -10,10 +10,12 @@ public class CoordinateController {
 
     private final OutputView outputView;
     private final InputView inputView;
+    private final PointFactory pointFactory;
 
     public CoordinateController() {
         this.outputView = new OutputView();
         this.inputView = new InputView();
+        this.pointFactory = new PointFactory();
     }
 
     public void startCoordinate() {
@@ -21,7 +23,7 @@ public class CoordinateController {
         String input = inputView.inputCoordinate();
 
         //Figure Instance 생성
-        Figure figure = PointFactory.createInstance(input);
+        Figure figure = pointFactory.createInstance(input);
 
         //좌표 그리기
         outputView.showCoordinate(figure);
