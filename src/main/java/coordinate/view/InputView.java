@@ -3,10 +3,11 @@ package coordinate.view;
 
 import java.util.Scanner;
 
+import static coordinate.constants.InputInfo.INPUT_COORDINATE;
+import static coordinate.constants.InputInfo.scanner;
+
 
 public class InputView {
-    private static final String INPUT_COORDINATE = "좌표를 입력하세요.";
-    private static Scanner scanner = new Scanner(System.in);
 
     public static String inputCoordinate() {
         System.out.println(INPUT_COORDINATE);

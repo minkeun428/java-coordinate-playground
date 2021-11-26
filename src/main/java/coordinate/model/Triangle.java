@@ -2,8 +2,10 @@ package coordinate.model;
 
 import java.util.List;
 
+import static coordinate.constants.TriangleInfo.TRIANGLE_POINT_SIZE;
+
+
 public class Triangle extends AbstractFigure {
-    public static final int TRIANGLE_POINT_SIZE = 3;
 
     public Triangle(List<Point> points) {
         super(points);

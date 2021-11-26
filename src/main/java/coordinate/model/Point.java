@@ -1,13 +1,11 @@
 package coordinate.model;
 
 
+import static coordinate.constants.PointInfo.*;
+
 public class Point {
     private final int x;
     private final int y;
-    private final int POW_VAL = 2;
-    private final String WRONG_RANGE_INPUT_VALUE = "잘못된 범위의 입력 값입니다.";
-    public static final int MIN_LIMIT = 1;
-    public static final int MAX_LIMIT = 24;
 
     public Point(int x, int y) {
         validation(x, y);
@@ -36,9 +34,23 @@ public class Point {
         return this.y;
     }
 
-    public boolean isSame(int x, int y) {
+//    @Override
+//    public boolean equals(int paramX, int paramY) {
+//        // equals메서드는 주소값이 다른 객체는 서로 다른 객체로 판단
+//        // equals를 재정의하여 주소 값이 달라도 같은 객은 객체로 판단할 수 있다.
+//
+//        return this.x == paramX && this.y == paramY;
+//    }
 
-        return this.x == x && this.y == y;
+//    @Override
+//    public int hashCode() {
+//
+//        return Objects.hash(x, y);
+//    }
+
+    public boolean isSame(int paramX, int paramY) {
+
+        return this.x == paramX && this.y == paramY;
     }
 
     public double calculateDistance(Point point) {

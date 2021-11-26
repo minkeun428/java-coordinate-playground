@@ -2,8 +2,10 @@ package coordinate.model;
 
 import java.util.List;
 
+import static coordinate.constants.LineInfo.LINE_POINT_SIZE;
+
+
 public class Line extends AbstractFigure{
-    public static final int LINE_POINT_SIZE = 2;
 
     public Line(List<Point> points) {
 

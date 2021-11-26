@@ -2,8 +2,10 @@ package coordinate.model;
 
 import java.util.List;
 
+
+import static coordinate.constants.RectangleInfo.RECTANGLE_POINT_SIZE;
+
 public class Rectangle extends AbstractFigure {
-    public static final int RECTANGLE_POINT_SIZE = 4;
 
     public Rectangle(List<Point> points) {
         super(points);
