@@ -1,16 +1,15 @@
 package coordinate.view;
 
 
-import java.util.Scanner;
 
 import static coordinate.constants.InputInfo.INPUT_COORDINATE;
 import static coordinate.constants.InputInfo.scanner;
 
 
-public class InputView {
+public class InputView extends View {
 
-    public static String inputCoordinate() {
-        System.out.println(INPUT_COORDINATE);
+    public String inputCoordinate() {
+        out.println(INPUT_COORDINATE);
 
         return scanner.nextLine();
     }

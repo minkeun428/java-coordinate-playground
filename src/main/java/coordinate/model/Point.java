@@ -34,20 +34,6 @@ public class Point {
         return this.y;
     }
 
-//    @Override
-//    public boolean equals(int paramX, int paramY) {
-//        // equals메서드는 주소값이 다른 객체는 서로 다른 객체로 판단
-//        // equals를 재정의하여 주소 값이 달라도 같은 객은 객체로 판단할 수 있다.
-//
-//        return this.x == paramX && this.y == paramY;
-//    }
-
-//    @Override
-//    public int hashCode() {
-//
-//        return Objects.hash(x, y);
-//    }
-
     public boolean isSame(int paramX, int paramY) {
 
         return this.x == paramX && this.y == paramY;
