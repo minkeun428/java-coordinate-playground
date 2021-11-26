@@ -10,16 +10,16 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class RectangleTest {
+
     @ParameterizedTest
-    @CsvSource(value = {"10:10:10:20:20:20:20:10:100"}, delimiter = ':')
+    @CsvSource(value = {"10:10:10:20:20:10:100"}, delimiter = ':')
     @DisplayName("직사각형 면적 구하기")
     void makeRectangleArea(int point1, int point2, int point3, int point4,
-            int point5, int point6, int point7, int point8, int expected) {
+            int point5, int point6, int expected) {
         List<Point> rectanglePoints = Arrays.asList(
                 new Point(point1, point2),
                 new Point(point3, point4),
-                new Point(point5, point6),
-                new Point(point7, point8)
+                new Point(point5, point6)
         );
 
         assertThat(Math.round(new Rectangle(rectanglePoints).area()))

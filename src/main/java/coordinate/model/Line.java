@@ -8,7 +8,6 @@ import static coordinate.constants.LineInfo.LINE_POINT_SIZE;
 public class Line extends AbstractFigure{
 
     public Line(List<Point> points) {
-
         super(points);
     }
 

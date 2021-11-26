@@ -30,7 +30,6 @@ public class CoordinateController {
 
         //길이 or 면적계산
         outputView.showAreaInfo(figure);
-
     }
 
 }
