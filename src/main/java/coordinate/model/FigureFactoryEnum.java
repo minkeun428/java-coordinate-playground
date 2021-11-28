@@ -1,25 +1,52 @@
 package coordinate.model;
 
+
+import coordinate.exception.RangeException;
+
+import java.util.Arrays;
 import java.util.List;
 
-import static coordinate.constants.LineInfo.LINE_POINT_SIZE;
-
 public enum FigureFactoryEnum {
-
-    //변경이 잘 일어나지 않는 선, 삼각형, 사각형의 구조 같은 경우에는
-    //enum으로 정의하여 좀 더 명확한 틀을 제공한다.
-
-//    LINE("선", new Line(points)),
-    RECTANGLE,
-    TRIANGLE;
-
-    private List<Point> points;
-
-    static Figure FigureFactoryEnum(List<Point> points) {
-        if(points.size() == LINE_POINT_SIZE) {
+    LINE(2) {
+        @Override
+        Figure maker(List<Point> points) {
             return new Line(points);
         }
-        throw new IllegalArgumentException();
+    },
+    TRIANGLE(3) {
+        @Override
+        Figure maker(List<Point> points) {
+            return new Triangle(points);
+        }
+    },
+    RECTANGLE(4) {
+        @Override
+        Figure maker(List<Point> points) {
+            return new Rectangle(points);
+        }
+    },
+    NOT_EXIST(5) {
+        @Override
+        Figure maker(List<Point> points) {
+            throw new RangeException("유효하지 않은 도형입니다.");
+        }
+    };
+
+    private int pointSize;
+
+    FigureFactoryEnum(int pointSize) {
+        this.pointSize = pointSize;
     }
 
+    // Enum의 필드에 추상메소드를 선언하고,
+    // 이를 상수들이 구현하도록 하면 Function 인터페이스 사용과 동일.
+    static Figure FigureFactoryEnum(List<Point> points) {
+        return Arrays.stream(FigureFactoryEnum.values())
+                .filter(figureFactoryEnum -> figureFactoryEnum.pointSize == points.size())
+                .findAny()
+                .orElseThrow(() -> new RangeException("유효하지 않은 도형입니다."))
+                .maker(points);
+    }
+
+    abstract Figure maker(List<Point> points);
 }

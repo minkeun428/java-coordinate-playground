@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import static coordinate.constants.PointFactoryInfo.DELIMITER;
 import static coordinate.constants.PointFactoryInfo.POINT_DELIMITER;
+import static coordinate.model.FigureFactoryEnum.FigureFactoryEnum;
 
 
 public class PointFactory {
@@ -13,7 +14,7 @@ public class PointFactory {
     public Figure createInstance(String input) {
         List<Point> points = createPoints(removeBracket(input));
 
-        return FigureFactory.getInstance(points);
+        return FigureFactoryEnum(points);
     }
 
     public String removeBracket(String input) {
