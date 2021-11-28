@@ -24,12 +24,6 @@ public enum FigureFactoryEnum {
         Figure maker(List<Point> points) {
             return new Rectangle(points);
         }
-    },
-    NOT_EXIST(5) {
-        @Override
-        Figure maker(List<Point> points) {
-            throw new RangeException("유효하지 않은 도형입니다.");
-        }
     };
 
     private int pointSize;
@@ -40,7 +34,8 @@ public enum FigureFactoryEnum {
 
     // Enum의 필드에 추상메소드를 선언하고,
     // 이를 상수들이 구현하도록 하면 Function 인터페이스 사용과 동일.
-    static Figure FigureFactoryEnum(List<Point> points) {
+    // FigureFactoryEnum 생성자가 만들어지는 위치는? values()가 호출될 때!
+    static Figure FigureFactoryEnum (List<Point> points) {
         return Arrays.stream(FigureFactoryEnum.values())
                 .filter(figureFactoryEnum -> figureFactoryEnum.pointSize == points.size())
                 .findAny()
